@@ -2,6 +2,7 @@
 //Starting is to show a Welcome message to this game.
 //Use Case 1 is to create the Tic Tac Toe board.
 //Use Case 2 is to allow player to choose letter X or O
+//Use Case 3 is to allow player to see the board, so he can choose the valid cells to make his move during his turn.
 
 
 package com.tictactoe.program;
@@ -22,21 +23,22 @@ public class TicTacToe {
         //Initialize the object
         TicTacToe obj = new TicTacToe();
 
-        //Creating the board
-        System.out.println(board[1] + " | " + board[2] + " | " + board[3]);
-        System.out.println("---------");
-        System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
-        System.out.println("---------");
-        System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
+        //Initialize board
+        obj.initialize();
 
         //Checking for player choice
         chooseOption();
 
+        //Showing board
+        showBoard();
+
     }
 
     //Initialization of game
-    public static void initialize() {
-        for (int i = 1; i < 10; i++) {
+    public void initialize()
+    {
+        for (int i = 1; i < 10; i++)
+        {
             board[i] = ' ';
         }
     }
@@ -57,7 +59,16 @@ public class TicTacToe {
             computer = 'X';
         }
         System.out.println("Player choosing option : "+player);
+    }
 
+    //To see board
+    public static void showBoard()
+    {
+        System.out.println(board[1] + " | " + board[2] + " | " + board[3]);
+        System.out.println("---------");
+        System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
+        System.out.println("---------");
+        System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
 
     }
 }
